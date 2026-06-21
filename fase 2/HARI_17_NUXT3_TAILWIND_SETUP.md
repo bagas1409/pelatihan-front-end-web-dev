@@ -1,13 +1,13 @@
-# Hari 17: Setup Project Nuxt 3 & Integrasi Tailwind CSS
+# Hari 17: Setup Project Nuxt 4 & Integrasi Tailwind CSS
 ## Menginisialisasi Proyek Baru Menggunakan Npx CLI & Menghubungkan Modul Tailwind Resmi
 
-Selamat datang di Hari 17! Hari ini kita akan mempraktikkan langkah fisik membuat proyek baru **Nuxt 3** dan mengintegrasikan pustaka **Tailwind CSS** secara resmi menggunakan modul `@nuxtjs/tailwindcss`.
+Selamat datang di Hari 17! Hari ini kita akan mempraktikkan langkah fisik membuat proyek baru **Nuxt 4** (yang menggunakan **Vue 3** versi terbaru, karena Vue 4 belum dirilis) dan mengintegrasikan pustaka **Tailwind CSS** secara resmi menggunakan modul `@nuxtjs/tailwindcss`.
 
-Nuxt 3 adalah framework tingkat tinggi (meta-framework) yang dibangun di atas Vue 3. Nuxt memanjakan developer dengan menyediakan fitur optimasi mesin pencari (SEO SSR), sistem impor komponen otomatis, dan pengaturan folder yang sangat teratur. Mari kita inisialisasi proyek DonorKu Frontend kita.
+Nuxt 4 adalah framework tingkat tinggi (meta-framework) yang dibangun di atas Vue 3. Nuxt memanjakan developer dengan menyediakan fitur optimasi mesin pencari (SEO SSR), sistem impor komponen otomatis, dan pengaturan folder yang sangat teratur. Mari kita inisialisasi proyek DonorKu Frontend kita.
 
 ---
 
-## 1. Langkah-Langkah Menginisialisasi Proyek Nuxt 3
+## 1. Langkah-Langkah Menginisialisasi Proyek Nuxt 4
 
 ### Langkah 1: Jalankan Perintah Pembuat Proyek
 Buka terminal komputer Anda di folder pelatihan, lalu ketik perintah berikut (pastikan koneksi internet aktif karena npx akan mengunduh repositori template Nuxt resmi):
@@ -32,7 +32,7 @@ npm install
 
 ## 2. Mengintegrasikan Tailwind CSS secara Resmi
 
-Untuk memasang Tailwind CSS di Nuxt 3, cara paling steril dan direkomendasikan adalah menggunakan modul resmi **`@nuxtjs/tailwindcss`**. Modul ini secara otomatis menyusun file konfigurasi Tailwind dan memproses build berkas secara efisien.
+Untuk memasang Tailwind CSS di Nuxt 4, cara paling steril dan direkomendasikan adalah menggunakan modul resmi **`@nuxtjs/tailwindcss`**. Modul ini secara otomatis menyusun file konfigurasi Tailwind dan memproses build berkas secara efisien.
 
 ### Langkah 1: Instal Modul Pustaka
 Ketik perintah ini di terminal proyek Anda:
@@ -41,12 +41,18 @@ npm install --save-dev @nuxtjs/tailwindcss
 ```
 
 ### Langkah 2: Daftarkan Modul di `nuxt.config.ts`
-Buka berkas konfigurasi pusat Nuxt bernama **`nuxt.config.ts`** di VS Code Anda. Daftarkan modul Tailwind di dalam array `modules`:
+Buka berkas konfigurasi pusat Nuxt bernama **`nuxt.config.ts`** di VS Code Anda. Daftarkan modul Tailwind di dalam array `modules` dan aktifkan mode kompatibilitas Nuxt 4:
 
 ```typescript
 // nuxt.config.ts
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2024-11-01',
+  
+  // Mengaktifkan fitur & struktur folder versi Nuxt 4
+  future: {
+    compatibilityVersion: 4,
+  },
+  
   devtools: { enabled: true },
   
   // Daftarkan modul di sini!
@@ -61,7 +67,7 @@ Ketik perintah menyalakan server lokal di terminal Anda:
 ```bash
 npm run dev
 ```
-Buka peramban browser Anda di alamat default: **`http://localhost:3000`**. Anda akan melihat tampilan beranda selamat datang bawaan Nuxt 3 yang bersih.
+Buka peramban browser Anda di alamat default: **`http://localhost:3000`**. Anda akan melihat tampilan beranda selamat datang bawaan Nuxt 4 yang bersih.
 
 ---
 
@@ -69,11 +75,11 @@ Buka peramban browser Anda di alamat default: **`http://localhost:3000`**. Anda 
 
 Mari kita buat file CSS utama untuk memuat font kustom Outfit Google Fonts yang telah kita rencanakan di Hari 14.
 
-1.  Buat folder baru bernama **`assets/css/`** di dalam folder proyek Anda.
+1.  Buat folder baru bernama **`app/assets/css/`** di dalam folder proyek Anda (karena di Nuxt 4, seluruh aset visual dan kode sumber berada di dalam direktori `app/`).
 2.  Buat file baru di dalamnya bernama **`main.css`** dan isi dengan baris impor berikut:
     ```css
-    /* assets/css/main.css */
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+    /* app/assets/css/main.css */
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght=300;400;500;600;700;800;900&display=swap');
 
     /* Mengunci font global agar menggunakan Outfit */
     body {
@@ -83,11 +89,14 @@ Mari kita buat file CSS utama untuk memuat font kustom Outfit Google Fonts yang 
 3.  Buka kembali file `nuxt.config.ts` dan hubungkan file CSS tersebut ke konfigurasi pusat:
     ```typescript
     export default defineNuxtConfig({
-      compatibilityDate: '2024-04-03',
+      compatibilityDate: '2024-11-01',
+      future: {
+        compatibilityVersion: 4,
+      },
       devtools: { enabled: true },
       modules: ['@nuxtjs/tailwindcss'],
       
-      // Hubungkan berkas CSS utama
+      // Hubungkan berkas CSS utama (Nuxt 4 otomatis mencari di dalam folder app/assets/css/)
       css: [
         '~/assets/css/main.css'
       ]
@@ -99,7 +108,7 @@ Mari kita buat file CSS utama untuk memuat font kustom Outfit Google Fonts yang 
 ## 4. Latihan Soal Mandiri
 1. Analisis pentingnya penambahan modul `@nuxtjs/tailwindcss` pada berkas konfigurasi `nuxt.config.ts` di atas.
 2. Jika Anda ingin melakukan konfigurasi kustom warna atau breakpoint tambahan untuk Tailwind di dalam proyek Nuxt, sebutkan di berkas file manakah kustomisasi tersebut ditulis dan di mana letak lokasi file tersebut disimpan secara standar.
-3. Sebutkan apa alamat port default server lokal yang digunakan oleh Nuxt 3 saat kita menjalankan perintah `npm run dev`.
+3. Sebutkan apa alamat port default server lokal yang digunakan oleh Nuxt 4 saat kita menjalankan perintah `npm run dev`.
 
 ---
 
@@ -110,7 +119,7 @@ Modul `@nuxtjs/tailwindcss` bertugas sebagai jembatan otomatis. Tanpa modul ini,
 
 ### Jawaban 2: File Konfigurasi Tailwind di Nuxt
 Kustomisasi warna dan font tambahan ditulis di dalam file **`tailwind.config.js`**.
-*   **Lokasi Penyimpanan**: Secara standar, file ini ditaruh di root folder (direktori utama paling luar) proyek Nuxt 3 Anda (berdampingan dengan file `nuxt.config.ts`). Modul `@nuxtjs/tailwindcss` secara otomatis mendeteksi keberadaan file tersebut dan menggunakannya untuk proses compile.
+*   **Lokasi Penyimpanan**: Secara standar, file ini ditaruh di root folder (direktori utama paling luar) proyek Nuxt 4 Anda (berdampingan dengan file `nuxt.config.ts`). Modul `@nuxtjs/tailwindcss` secara otomatis mendeteksi keberadaan file tersebut dan menggunakannya untuk proses compile.
 
-### Jawaban 3: Port Default Nuxt 3
-Alamat port default server lokal Nuxt 3 adalah **`port 3000`** (misal: `http://localhost:3000`), berbeda dengan port default React Vite yang biasanya menggunakan port `5173`.
+### Jawaban 3: Port Default Nuxt 4
+Alamat port default server lokal Nuxt 4 adalah **`port 3000`** (misal: `http://localhost:3000`), berbeda dengan port default React Vite yang biasanya menggunakan port `5173`.

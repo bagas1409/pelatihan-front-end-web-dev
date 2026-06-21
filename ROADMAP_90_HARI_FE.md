@@ -1,15 +1,15 @@
 # 🗺️ ROADMAP PELATIHAN FRONTEND DEVELOPER (90 HARI)
-## Kurikulum Siap Kerja: Menguasai Vue 3, Nuxt 3, & Tailwind CSS Melalui Integrasi API PMI (DonorKu)
+## Kurikulum Siap Kerja: Menguasai Vue 3 (Nuxt 4), & Tailwind CSS Melalui Integrasi API PMI (DonorKu)
 
 Selamat datang di Roadmap Pembelajaran Frontend 90 Hari! Dokumen ini dirancang khusus untuk membawa Anda dari level nol (zero) hingga menjadi **Frontend Engineer siap kerja**. 
 
-Seluruh pembelajaran akan berfokus pada ekosistem **Vue 3 / Nuxt 3** dan **Tailwind CSS**, dengan studi kasus nyata pembuatan **Admin Panel & Portal Relawan PMI (Indonesian Red Cross)**. Seluruh logika data akan diintegrasikan langsung dengan backend API Express.js & Database Prisma yang sudah dibangun sebelumnya.
+Seluruh pembelajaran akan berfokus pada ekosistem **Vue 3 (Nuxt 4)** dan **Tailwind CSS**, dengan studi kasus nyata pembuatan **Admin Panel & Portal Relawan PMI (Indonesian Red Cross)**. Seluruh logika data akan diintegrasikan langsung dengan backend API Express.js & Database Prisma yang sudah dibangun sebelumnya.
 
 ---
 
 ## 📅 DAFTAR RINGKASAN FASE
 1. **Fase 1 (Hari 01 - 15)**: Fondasi Dasar - HTML5, CSS3 Modern, JS ES6+, & Tailwind CSS
-2. **Fase 2 (Hari 16 - 35)**: Fondasi Vue 3 (Composition API) & Arsitektur Nuxt 3
+2. **Fase 2 (Hari 16 - 35)**: Fondasi Vue 3 (Composition API) & Arsitektur Nuxt 4 (Struktur Folder Baru)
 3. **Fase 3 (Hari 36 - 55)**: Data Fetching, State Management (Pinia), & Validasi Form
 4. **Fase 4 (Hari 56 - 75)**: Integrasi API Medis, Autentikasi JWT, & Guard Middleware
 5. **Fase 5 (Hari 76 - 90)**: Fitur Advanced (Peta, Export Berkas), Testing, & Production Deployment
@@ -37,12 +37,12 @@ Seluruh pembelajaran akan berfokus pada ekosistem **Vue 3 / Nuxt 3** dan **Tailw
 
 ---
 
-## 🏗️ FASE 2: VUE 3 COMPOSITION API & ARSITEKTUR NUXT 3 (HARI 16 - 35)
-*Fokus: Bermigrasi ke framework Nuxt 3, memahami reaktivitas data, komponen reusable, dan sistem routing otomatis.*
+## 🏗️ FASE 2: VUE 3 COMPOSITION API & ARSITEKTUR NUXT 4 (HARI 16 - 35)
+*Fokus: Bermigrasi ke framework Nuxt 4, memahami reaktivitas data, komponen reusable, dan sistem routing otomatis berbasis folder app/.*
 
 *   **Hari 16**: Pengenalan Vue 3 & Perbedaan Composition API vs Options API.
-*   **Hari 17**: Setup Project Nuxt 3 pertama dengan Vite & Integrasi Tailwind CSS (`@nuxtjs/tailwindcss`).
-*   **Hari 18**: Struktur Direktori Nuxt 3 (`app.vue`, `pages/`, `components/`, `layouts/`, `public/`).
+*   **Hari 17**: Setup Project Nuxt 4 pertama dengan Vite & Integrasi Tailwind CSS (`@nuxtjs/tailwindcss`).
+*   **Hari 18**: Struktur Direktori Nuxt 4 (`app/app.vue`, `app/pages/`, `app/components/`, `app/layouts/`, `public/`).
 *   **Hari 19**: Reaktivitas di Vue 3 - Memahami `ref()` vs `reactive()` beserta kasus penggunaannya.
 *   **Hari 20**: Pengikatan Data Ganda (Two-Way Data Binding) menggunakan `v-model` pada formulir PMI.
 *   **Hari 21**: Direktif Kondisional (`v-if`, `v-else-if`, `v-else`) & Render List (`v-for` dengan atribut `:key`).
@@ -51,22 +51,22 @@ Seluruh pembelajaran akan berfokus pada ekosistem **Vue 3 / Nuxt 3** dan **Tailw
 *   **Hari 24**: Komunikasi Anak ke Induk - Memicu event khusus menggunakan `defineEmits`.
 *   **Hari 25**: computed Property - Menghitung jumlah kantong darah kritis secara otomatis di RAM.
 *   **Hari 26**: watch & watchEffect - Memantau perubahan input untuk filter pencarian wilayah.
-*   **Hari 27**: Nuxt File-Based Routing (Routing otomatis berdasarkan susunan file di folder `pages/`).
+*   **Hari 27**: Nuxt File-Based Routing (Routing otomatis berdasarkan susunan file di folder `app/pages/`).
 *   **Hari 28**: Navigasi Antar Halaman di Nuxt menggunakan `<NuxtLink>` & router programatis `navigateTo()`.
-*   **Hari 29**: Rute Dinamis (Dynamic Routing) menggunakan berkas `pages/event/[id].vue` untuk detail agenda donor.
-*   **Hari 30**: Layout Dinamis di Nuxt - Mengatur `layouts/default.vue` (dashboard) vs `layouts/auth.vue` (login).
-*   **Hari 31**: Nuxt Components Auto-Imports & Pengelompokan Folder Komponen.
-*   **Hari 32**: Transisi Halaman & Animasi Element di Nuxt 3 (`pageTransition`).
+*   **Hari 29**: Rute Dinamis (Dynamic Routing) menggunakan berkas `app/pages/event/[id].vue` untuk detail agenda donor.
+*   **Hari 30**: Layout Dinamis di Nuxt - Mengatur `app/layouts/default.vue` (dashboard) vs `app/layouts/auth.vue` (login).
+*   **Hari 31**: Nuxt Components Auto-Imports & Pengelompokan Folder Komponen di `app/components/`.
+*   **Hari 32**: Transisi Halaman & Animasi Element di Nuxt 4 (`pageTransition`).
 *   **Hari 33**: Penggunaan Teleport di Vue 3 untuk membuat Modal Pop-up konfirmasi donor.
-*   **Hari 34**: Penggunaan Server-Side Rendering (SSR) vs Static Site Generation (SSG) di Nuxt 3.
-*   **Hari 35**: Evaluasi Fase 2 - Membuat struktur navigasi lengkap Dashboard Admin PMI (Home, Stok, Relawan, Event) tanpa koneksi API.
+*   **Hari 34**: Penggunaan Server-Side Rendering (SSR) vs Static Site Generation (SSG) di Nuxt 4.
+*   **Hari 35**: Evaluasi Fase 2 - Membuat struktur navigasi lengkap Dashboard Admin PMI (Home, Stok, Relawan, Event) dengan folder baru Nuxt 4.
 
 ---
 
 ## ⚡ FASE 3: DATA FETCHING, STATE MANAGEMENT, & VALIDASI (HARI 36 - 55)
 *Fokus: Mengambil data dari API backend, mengelola state aplikasi secara terpusat, dan membuat validasi form yang aman.*
 
-*   **Hari 36**: Konsep Data Fetching di Nuxt 3 - Perbedaan `$fetch`, `useFetch`, & `useLazyFetch`.
+*   **Hari 36**: Konsep Data Fetching di Nuxt 4 - Perbedaan `$fetch`, `useFetch`, & `useLazyFetch`.
 *   **Hari 37**: Penggunaan `useAsyncData` untuk query data kompleks dari database.
 *   **Hari 38**: Mengatasi Masalah Hydration Mismatch antara Server (SSR) dan Client di Nuxt.
 *   **Hari 39**: Penanganan Status Fetching (Loading indicator, Error handler, & Refetch data).
@@ -79,12 +79,12 @@ Seluruh pembelajaran akan berfokus pada ekosistem **Vue 3 / Nuxt 3** dan **Tailw
 *   **Hari 46**: Integrasi Schema Validation **Zod** dengan Form Input di frontend.
 *   **Hari 47**: Validasi Kolom Email, Password, & NIK KTP Relawan secara langsung saat mengetik.
 *   **Hari 48**: Mengirim data form pendaftaran donor baru (`POST /api/donor`) ke server backend.
-*   **Hari 49**: Custom Composables di Nuxt 3 - Memecah logika fetch agar bisa dipakai berulang kali.
+*   **Hari 49**: Custom Composables di Nuxt 4 - Memecah logika fetch agar bisa dipakai berulang kali.
 *   **Hari 50**: Membuat Composable `useApi` sebagai pembungkus default base URL API.
 *   **Hari 51**: Nuxt Plugins - Cara mendaftarkan library pihak ketiga (seperti Toast Notification).
 *   **Hari 52**: Menampilkan Notifikasi Melayang (Toast) saat input data sukses atau gagal.
 *   **Hari 53**: Mengatur SEO Meta Tags secara dinamis (`useHead`, `useSeoMeta`) untuk pencarian Google.
-*   **Hari 54**: Penanganan Error Halaman Kustom - Membuat file `error.vue` untuk halaman 404 & 500.
+*   **Hari 54**: Penanganan Error Halaman Kustom - Membuat file `app/error.vue` untuk halaman 404 & 500.
 *   **Hari 55**: Evaluasi Fase 3 - Membuat Form Registrasi & List Stok Darah terintegrasi dengan validasi Zod & composable fetch.
 
 ---
@@ -118,12 +118,12 @@ Seluruh pembelajaran akan berfokus pada ekosistem **Vue 3 / Nuxt 3** dan **Tailw
 ## 🚀 FASE 5: ADVANCED COMPONENT, TESTING, & DEPLOYMENT (HARI 76 - 90)
 *Fokus: Menambahkan fitur peta interaktif, melakukan pengujian kode, dan meluncurkan website ke internet publik.*
 
-*   **Hari 76**: Peta Interaktif di Nuxt 3 - Mengintegrasikan Leaflet JS / Google Maps tanpa jQuery.
+*   **Hari 76**: Peta Interaktif di Nuxt 4 - Mengintegrasikan Leaflet JS / Google Maps tanpa jQuery.
 *   **Hari 77**: Merender Marker koordinat cabang UDD PMI dan RS Swasta secara dinamis di atas peta Leaflet.
 *   **Hari 78**: Fitur Geocoding - Mengubah ketikan alamat admin menjadi titik koordinat lintang bujur.
 *   **Hari 79**: Pembuatan Ekspor File di Frontend - Mengonversi tabel data relawan menjadi file **Excel** (`xlsx`).
 *   **Hari 80**: Pembuatan Ekspor File di Frontend - Membuat tombol Cetak Kartu Anggota Relawan format **PDF** (`jspdf`).
-*   **Hari 81**: Dark Mode / Light Mode di Nuxt 3 menggunakan modul `@nuxtjs/color-mode`.
+*   **Hari 81**: Dark Mode / Light Mode di Nuxt 4 menggunakan modul `@nuxtjs/color-mode`.
 *   **Hari 82**: Pengenalan Pengujian Unit (Unit Testing) di Vue menggunakan **Vitest** & `@vue/test-utils`.
 *   **Hari 83**: Menulis Tes Unit pertama untuk menguji komponen tombol & komputasi computed stok.
 *   **Hari 84**: Pengenalan End-to-End (E2E) Testing menggunakan **Playwright** / **Cypress**.
